@@ -35,16 +35,40 @@ console.log(alternatingSums([60, 40, 55, 75, 64]))
 //------------------------------------------------------------------------------
 
 // về cái API này thì khóa 1 và khóa 2 không thấy nhắc tới nhiều nên mình chưa tìm hiểu sâu về phần này nên mình không biết code nó như thế nào cả.
+// lần đầu do không hiểu đề
+// Push lần 2 sau khi hỏi lại logic của ng khác và tự code lại
 
+let btn = document.querySelector('button');
+let labelInput = document.querySelectorAll('label');
+Array.from(labelInput).forEach(item => {
+    item.onclick = function () {
+        let activeLabel = document.querySelector('.active')
+        activeLabel.classList.remove('active')
+        item.classList.add('active');
+    }
+})
 
+btn.onclick = function () {
+    let resultLink = document.querySelector('.linkShort')
+    let inputLink = document.querySelector('#inputLink');
 
+    let linkApi = 'https://api.shrtco.de/v2/shorten?url=' + inputLink.value
 
+    fetch(linkApi)
+        .then(response => response.json())
+        .then(async data => {
+            console.log(data);
+            if (document.querySelector('#link-shrtcode').checked) {
+                resultLink.innerHTML = data.result.full_short_link
+            } else if (document.querySelector('#link-9qrde').checked) {
+                resultLink.innerHTML = data.result.full_short_link2
+            } else if (document.querySelector('#link-shinylink').checked) {
+                resultLink.innerHTML = data.result.full_short_link3
+            }
+        })
 
-fetch('https://api.shrtco.de/v2/shorten?url=example.org/very/long/link.html')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
+}
+
 
 
 

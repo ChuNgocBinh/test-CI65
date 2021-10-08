@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .contaier{
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background-color:coral;
+            padding:20px
+        }
+        input[type="text"] {
+            width: 400px;
+            margin-bottom:20px;
+        }
+        input[type="radio"] {
+            display: none;
+
+        }
+
+        label {
+            margin-right: 20px;
+        }
+
+        .active {
+            color: red;
+            background-color: yellow;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="contaier">
+
+        <h1>Link Shortener</h1>
+        <input type="text" id="inputLink">
+        <button>chuyển đổi</button>
+        <div>
+            <label for="link-shrtcode" class="active">shrtco.de</label>
+            <input type="radio" id="link-shrtcode" name='typeLink' checked>
+            <label for="link-9qrde">9qr.de</label>
+            <input type="radio" id="link-9qrde" name='typeLink'>
+            <label for="link-shinylink">shiny.link</label>
+            <input type="radio" id="link-shinylink" name='typeLink'>
+        </div>
+        <h2 class="linkShort"></h2>
+    </div>
 
     <script src="main.js"></script>
 </body>
+
 </html>
