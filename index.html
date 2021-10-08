@@ -7,12 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            background-color: #21253F;
+        }
+
         .contaier{
-            width: 500px;
-            height: 500px;
+            width: 600px;
+            height: 300px;
             margin: 0 auto;
-            background-color:coral;
-            padding:20px
+            background-color:white;
+            padding:20px;
+            border-radius: 20px;
+        }
+        .form-group{
+            text-align: center;
         }
         input[type="text"] {
             width: 400px;
@@ -25,11 +33,13 @@
 
         label {
             margin-right: 20px;
+            padding: 5px;
+            cursor: pointer;
         }
 
         .active {
-            color: red;
-            background-color: yellow;
+            color: white;
+            background-color: #21253F;
         }
     </style>
 </head>
@@ -38,9 +48,12 @@
     <div class="contaier">
 
         <h1>Link Shortener</h1>
+
+    <h3>Enter a Link:</h3>
         <input type="text" id="inputLink">
-        <button>chuyển đổi</button>
-        <div>
+        <button>Change</button>
+        <div class="form-group">
+            <h4>Short domain: </h4>
             <label for="link-shrtcode" class="active">shrtco.de</label>
             <input type="radio" id="link-shrtcode" name='typeLink' checked>
             <label for="link-9qrde">9qr.de</label>
